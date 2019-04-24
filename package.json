@@ -10,7 +10,8 @@
     "common-util"
   ],
   "scripts": {
-    "build": "webpack --config scripts/webpack.conf.js"
+    "build": "webpack --config scripts/webpack.conf.js",
+    "release": "sh scripts/release.sh"
   },
   "author": "ly2011",
   "license": "MIT",
