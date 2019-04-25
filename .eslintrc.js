@@ -6,7 +6,6 @@ module.exports = {
     node: true
   },
   extends: ['standard'],
-  plugins: ['vue'],
   rules: {
     semi: 0,
     'no-console': 0,
