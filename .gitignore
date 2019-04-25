@@ -2,8 +2,6 @@
 .cache
 node_modules
 package-lock.json
-es
-lib
 dist
 docs/dist
 changelog.generated.md
