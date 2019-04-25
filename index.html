@@ -16,6 +16,9 @@
   console.log('isEmail: ', ittool.isEmail('123@163.com'))
   console.log('isUrl: ', ittool.isEmail('www.baidu.com'))
   console.log('isSameDay: ', ittool.isSameDay(new Date(), new Date()))
+  var uniqArr = ittool.union([1, 2, 3], [4, 3, 2], [4, 5, 6, 8], [[1, 3], [4, 7]])
+  console.log('union', uniqArr, uniqArr.length)
+  uniqArr.forEach(item => console.log('item: ', item))
 </script>
 </body>
 </html>

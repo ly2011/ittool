@@ -9,7 +9,7 @@ const babelConfig = require('../config/babelrc')
 const rootPath = path.resolve(__dirname, '../')
 
 const config = {
-  mode: 'production',
+  mode: 'development', // TODO: 为了方便本地调试，暂时改为开发模式
   context: cwd,
   entry: path.resolve(rootPath, 'src', 'index.js'),
   output: {
