@@ -10,7 +10,7 @@ const resolve = function(dir) {
   return path.resolve(__dirname, '..', dir)
 }
 
-module.exports = merge(baseConfig('production'), {
+module.exports = merge(baseConfig('development'), {
   entry: './examples/index.js',
   output: {
     path: resolve('dist'),
