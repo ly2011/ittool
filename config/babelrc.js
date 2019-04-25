@@ -22,7 +22,7 @@ module.exports = {
       }
     ],
     '@babel/plugin-syntax-dynamic-import',
-    '@babel/plugin-transform-object-assign'
-    // ['import', { libraryName: 'ittool', libraryDirectory: 'lib', camel2DashComponentName: false }]
+    '@babel/plugin-transform-object-assign',
+    ['import', { libraryName: 'ittool', libraryDirectory: 'lib', camel2DashComponentName: false }]
   ]
 }

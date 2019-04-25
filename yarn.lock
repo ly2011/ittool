@@ -4253,10 +4253,10 @@ isobject@^3.0.0, isobject@^3.0.1:
   resolved "https://registry.npmjs.org/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
   integrity sha1-TkMekrEalzFjaqH5yNHMvP2reN8=
 
-ittool@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.npmjs.org/ittool/-/ittool-0.1.2.tgz#3829f1e8a8fc3e63c24226adabf0dcb3ae62e99f"
-  integrity sha512-AvCN061lBZW/qGZe4I6ePwBEysGpbLHvZL+Pj56gt2OG5AYwgmcdCRnnCdvLU2+NOU9Z3EIp1dL1Yto9dpXvPA==
+ittool@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.npmjs.org/ittool/-/ittool-0.1.3.tgz#a6a984e3380a4c4c9c982e5b8240c970fbe54a94"
+  integrity sha512-E+HUNPM6ZiUI0dcqRJVdUdsyjEbQPZvBmMAKg+KIe9F1gS1hFc4VAU4bYmZwPIs9gKdtf2FAP0Lj1HDiiEVznw==
 
 jest-worker@^24.0.0:
   version "24.6.0"
