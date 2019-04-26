@@ -26,6 +26,7 @@ module.exports = {
     ],
     '@babel/plugin-syntax-dynamic-import',
     '@babel/plugin-transform-object-assign',
+    '@babel/plugin-transform-modules-commonjs', // https://github.com/webpack/webpack/issues/4039
     ['import', { libraryName: 'ittool', libraryDirectory: 'lib', camel2DashComponentName: false }]
   ]
 }
