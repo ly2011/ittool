@@ -35,6 +35,16 @@ declare namespace ittool {
 
   /**
    *
+   * @desc  特殊符号分割金额数字
+   * @param {Number|String} amount 金额
+   * @param {Object} options 金额格式化的其他参数
+   * @param {String} locales (如果locale为undefined (上例中为en-US)，则默认值为系统的locale，即navigator.language)
+   * @return {String} 格式化后的金额
+   */
+  function formatMoney (amount: number|string, options: object, locales: string): string
+
+  /**
+   *
    * @desc   判断`obj`是否为空
    * @param  {Object} obj
    * @return {Boolean}
@@ -96,6 +106,38 @@ declare namespace ittool {
    * @return {Boolean}
    */
   export function isSameDay(date1: Date, date2: Date): boolean
+
+  /**
+   *  格式化日期对象
+   * @param {Date|String|Number} date
+   * @param {String} format
+   * @return {String} 返回格式化后的字符串
+   */
+  export function formatDate(date: Date | string | number, format: string): string
+
+  /**
+   *
+   * @desc  延时执行
+   * @param {Number} second
+   */
+  export function sleep(second: number): void
+
+  /**
+   *
+   * @desc  判断指定年份是否是闰年
+   * @param {Number} year 要判断的年份
+   * @return {Boolean}  如果年份是闰年，则返回 true, 否则返回 false
+   */
+  export function isLeapYear(year: number): boolean
+
+  /**
+   *
+   * @desc  获取指定年的指定月的天数
+   * @param {Number} year
+   * @param {Number} month
+   * @return {Number} 返回天数
+   */
+  export function getDaysInMonth(year: number, month: number): number
 }
 
 declare module 'ittool' {
