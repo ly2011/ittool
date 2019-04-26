@@ -37,6 +37,14 @@ console.log('arrayEqual: ', ittool.arrayEqual(arr1, arr2))
 
 **推荐使用方法**
 
+安装 `babel-plugin-import`, 并且配置 `.babelrc.js` 如下：
+```js
+  plugins: [
+    ['import', { libraryName: 'ittool', libraryDirectory: 'lib', camel2DashComponentName: false }]
+  ]
+```
+
+
 你真的不需要完整引入所有函数，所以只引入需要使用的方法即可。
 ``` javascript
 // 只引入部分方法('ittool/<方法名>')
