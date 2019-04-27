@@ -1,0 +1,10 @@
+:root {
+  /* --base-font-size: 14px; */
+  --sidebar-name-text-align: left;
+  --sidebar-name-font-size: 14px;
+  /* --theme-hue: 325; */
+  /* --sidebar-nav-link-before-content: '😀'; */
+}
+
+.sidebar .app-name {
+}
