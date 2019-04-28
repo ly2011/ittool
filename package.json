@@ -1,11 +1,15 @@
 {
   "name": "ittool",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "🚀 前端业务代码工具库 ",
   "browser": "lib/ittool.min.js",
   "main": "lib/ittool.min.js",
   "types": "index.d.ts",
-  "keywords": [ "util", "tool", "common-util" ],
+  "keywords": [
+    "util",
+    "tool",
+    "common-util"
+  ],
   "engines": {
     "node": ">=4.0.0"
   },
@@ -74,6 +78,9 @@
     }
   },
   "lint-staged": {
-    "packages/**/*.{js,vue}": [ "eslint", "git add" ]
+    "packages/**/*.{js,vue}": [
+      "eslint",
+      "git add"
+    ]
   }
 }
