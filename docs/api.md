@@ -225,3 +225,11 @@ _.isSameDay(new Date(), new Date()) // => true
 ```js
 _.sleep(50) // 延时执行 50 毫秒
 ```
+
+### getCurMonthLastDate
+
+获取日期本月份的最后一天.
+
+```js
+_.getCurMonthLastDate(new Date('2019/01/01')) // => new Date('2019/01/31')
+```

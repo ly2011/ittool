@@ -138,6 +138,15 @@ declare namespace ittool {
    * @return {Number} 返回天数
    */
   export function getDaysInMonth(year: number, month: number): number
+
+  /**
+   *
+   * @desc  获取日期本月份的最后一天
+   * @param {Date|String|Number} date
+   * @return {Date}
+   * @example getCurMonthLastDate(new Date('2019/01/01')) // new Date('2019/01/31')
+   */
+  export function getCurMonthLastDate (date: Date | string | number): Date
 }
 
 declare module 'ittool' {
