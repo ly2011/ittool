@@ -41,7 +41,25 @@ declare namespace ittool {
    * @param {String} locales (如果locale为undefined (上例中为en-US)，则默认值为系统的locale，即navigator.language)
    * @return {String} 格式化后的金额
    */
-  function formatMoney (amount: number|string, options: object, locales: string): string
+  export function formatMoney(amount: number | string, options: object, locales: string): string
+
+  /**
+   * @desc 将阿拉伯数字翻译成中文的大写数字
+   * @param {Number} num 金额
+   * @return {String} 返回中文的大写数字
+   * @example
+   * numberToChinese(10.222) // 一十点二二二
+   */
+  export function numberToChinese(num: number): string
+
+  /**
+   * @desc 将数字转换为大写金额
+   * @param {Number} num 金额
+   * @return {String} 转为大写的金额
+   * @example
+   * changeToChinese(369.21) // 叁佰陆拾玖元贰角壹分
+   */
+  export function changeToChinese(num: number): string
 
   /**
    *
@@ -146,7 +164,15 @@ declare namespace ittool {
    * @return {Date}
    * @example getCurMonthLastDate(new Date('2019/01/01')) // new Date('2019/01/31')
    */
-  export function getCurMonthLastDate (date: Date | string | number): Date
+  export function getCurMonthLastDate(date: Date | string | number): Date
+
+  /**
+   * @desc  产生一个包括 min 与 max 之间的数
+   * @param {Number} min 最小值
+   * @param {Number} max 最大值
+   * @return {Number} 返回随机数
+   */
+  export function random(min: number, max: number): number
 }
 
 declare module 'ittool' {

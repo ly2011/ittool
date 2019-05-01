@@ -86,6 +86,22 @@ _.union([1, 'a', 3, 1], [4, 'a', 'b'], [2, 3, 'b', 'c'])
 _.formatMoney(239.575) // => 239.58
 ```
 
+### numberToChinese
+
+将阿拉伯数字翻译成中文的大写数字.
+
+```js
+_.numberToChinese(10.222) // => 一十点二二二
+```
+
+### changeToChinese
+
+将数字转换为大写金额.
+
+```js
+_.changeToChinese(369.21) // 叁佰陆拾玖元贰角壹分
+```
+
 ## Object
 
 ### isEmptyObject
@@ -231,4 +247,24 @@ _.sleep(50) // 延时执行 50 毫秒
 
 ```js
 _.getCurMonthLastDate(new Date('2019/01/01')) // => new Date('2019/01/31')
+```
+
+## Number
+
+### random
+
+产生一个包括 min 与 max 之间的数.
+
+**Arguments**
+
+`min(Number)`: 最小值
+
+`max(Number)`: 最大值
+
+**Returns**
+
+(Number): 返回随机数
+
+```js
+_.random(1, 5) // => 返回一个1-5之间的随机数
 ```
