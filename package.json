@@ -1,6 +1,6 @@
 {
   "name": "ittool",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "🚀 前端业务代码工具库 ",
   "browser": "lib/ittool.min.js",
   "main": "lib/ittool.min.js",
