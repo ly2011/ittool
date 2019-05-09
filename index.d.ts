@@ -34,6 +34,15 @@ declare namespace ittool {
   export function union(...arr: Array<any>): Array<any>
 
   /**
+   * https://bost.ocks.org/mike/shuffle/compare.html
+   * @desc 打乱一个数组的顺序
+   * @param {Array} arr
+   * @return {Array}
+   * @example  _.shuffle([1, 2, 3, 4]); // => [4, 1, 3, 2]
+   */
+  export function shuffle(arr: Array<any>): Array<any>
+
+  /**
    *
    * @desc  特殊符号分割金额数字
    * @param {Number|String} amount 金额
@@ -92,6 +101,27 @@ declare namespace ittool {
    * @return {Boolean}
    */
   export function isPhoneNum(str: string | number): boolean
+
+  /**
+   * @desc 判断是否合法车牌号
+   * @param {String} license 车牌号码
+   * @return {Boolean}
+   */
+  export function isCarLicense(license: string): boolean
+
+  /**
+   * 判断是否包含中文
+   * @param {String} str
+   * @return {Boolean}
+   */
+  export function isChinese(str: string): boolean
+
+  /**
+   * @desc 判断是否是IP地址
+   * @param {String} str ip地址
+   * @return {Boolean}
+   */
+  export function isIp(str: string): boolean
 
   /**
    *

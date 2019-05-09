@@ -64,6 +64,14 @@ _.union([1, 'a', 3, 1], [4, 'a', 'b'], [2, 3, 'b', 'c'])
 // => [1, 'a', 3, 4, 'b', 2, 'c']
 ```
 
+### shuffle
+
+打乱一个数组的顺序
+
+```js
+_.shuffle([1, 2, 3, 4]); // => [4, 1, 3, 2]
+```
+
 ## money
 
 ### formatMoney
@@ -178,6 +186,30 @@ _.isPhoneOrTel('010-86551122') // => true
 
 ```js
 _.isUrl('https://github.com/ly2011/ittool') // => true
+```
+
+### isCarLicense
+
+判断是否合法车牌号
+
+```js
+_.isCarLicense('粤A00001') // => true
+```
+
+### isChinese
+
+判断是否包含中文
+
+```js
+_.isChinese('001雪糕') // => true
+```
+
+### isIp
+
+判断是否是IP地址
+
+```js
+_.isIp('127.0.0.1') // => true
 ```
 
 ## time
