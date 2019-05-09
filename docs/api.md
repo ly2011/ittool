@@ -249,6 +249,30 @@ _.sleep(50) // 延时执行 50 毫秒
 _.getCurMonthLastDate(new Date('2019/01/01')) // => new Date('2019/01/31')
 ```
 
+### isDate
+
+判断是否为合法的日期
+
+```js
+_.isDate(new Date()) // => true
+```
+
+### validateRangeInOneMonth
+
+判断两个日期是否在同一个月内
+
+```js
+_.validateRangeInOneMonth(new Date(), new Date()) // => true
+```
+
+### getDayCountOfYear
+
+获取一年内的天数
+
+```js
+_.getDayCountOfYear(2019) // => 365
+```
+
 ## Number
 
 ### random

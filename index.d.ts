@@ -167,6 +167,28 @@ declare namespace ittool {
   export function getCurMonthLastDate(date: Date | string | number): Date
 
   /**
+   * @desc 判断是否为合法的日期
+   * @param {Date|Number|String} date
+   * @return {Boolean}
+   */
+  export function isDate(date: Date | string | number): boolean
+
+  /**
+   * @desc 判断两个日期是否在同一个月内
+   * @param {Date} start 开始日期
+   * @param {Date} end 结束日期
+   * @return {Boolean}
+   */
+  export function validateRangeInOneMonth(start: Date, end: Date): boolean
+
+  /**
+   * @desc 获取一年内的天数
+   * @param {Number} year 年份
+   * @return {Number} 闰年返回366,平年返回365
+   */
+  export function getDayCountOfYear(year: number): number
+
+  /**
    * @desc  产生一个包括 min 与 max 之间的数
    * @param {Number} min 最小值
    * @param {Number} max 最大值
