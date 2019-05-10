@@ -5,13 +5,14 @@
  * @param {Array} arr2
  * @return {Boolean}
  */
-function arrayEqual(arr1, arr2) {
-  if (arr1 === arr2) return true;
-  if (arr1.length != arr2.length) return false;
+function arrayEqual (arr1, arr2) {
+  if (arr1 === arr2) return true
+  if (arr1.length != arr2.length) return false
   for (var i = 0; i < arr1.length; ++i) {
-      if (arr1[i] !== arr2[i]) return false;
+    if (arr1[i] !== arr2[i]) return false
   }
-  return true;
+  return true
 }
 
-module.exports = arrayEqual
+// module.exports = arrayEqual
+export default arrayEqual
