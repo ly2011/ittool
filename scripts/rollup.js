@@ -4,8 +4,6 @@ const commonjs = require('rollup-plugin-commonjs')
 const babel = require('rollup-plugin-babel')
 const replace = require('rollup-plugin-replace')
 
-const defaultBabelOptions = require('../config/babelrc.js')
-
 const { name, version, author } = require('../package.json')
 // banner
 const banner =
@@ -15,12 +13,6 @@ const banner =
   ` */`
 
 function build (input) {
-  const babelOptions = Object.assign({}, defaultBabelOptions, {
-    runtimeHelpers: true,
-    exclude: 'node_modules/**', // only transpile our source code
-    plugins: ['@babel/plugin-syntax-dynamic-import', '@babel/plugin-transform-object-assign']
-  })
-
   const defaultOptions = {
     plugins: [
       alias({
@@ -35,7 +27,10 @@ function build (input) {
         // specifically include/exclude files
         include: 'node_modules/**'
       }),
-      babel(babelOptions)
+      babel({
+        runtimeHelpers: true,
+        exclude: 'node_modules/**' // only transpile our source code
+      })
     ],
     external: ['tslib']
   }
