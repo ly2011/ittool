@@ -80,6 +80,56 @@ declare namespace ittool {
 
   /**
    *
+   * @desc 根据对象路径获取值。 如果解析 value 是 undefined 会以 defaultValue 取代。
+   * @param {Object} obj 要检索的对象
+   * @param {Array|String} path 要获取的对象路径
+   * @param {*} defaultValue 如果解析值是 undefined，这值会被返回
+   * @returns {*} 返回解析的值
+   *
+   * @example
+   * var object = { 'a': [{ 'b': { 'c': 3 } }] };
+   *
+   * _.get(object, 'a[0].b.c');
+   * // => 3
+   *
+   * _.get(object, ['a', '0', 'b', 'c']);
+   * // => 3
+   *
+   * _.get(object, 'a.b.c', 'default');
+   * // => 'default'
+   */
+  export function get(obj: object, path: Array<string> | string, defaultValue: any = undefined): any
+
+  /**
+   * 返回忽略属性之外的自身和继承的可枚举属性
+   * @param {Object} obj 来源对象
+   * @param {Array|String} keys 要被忽略的属性，单独指定或指定在数组中
+   * @returns {Object}
+   * @example
+   *
+   * var object = { 'a': 1, 'b': '2', 'c': 3 };
+   *
+   * _.omit(object, ['a', 'c']);
+   * // => { 'b': '2' }
+   */
+  export function omit(obj: object, keys: Array<string> | string): any
+
+  /**
+   * 创建一个从 object 中选中的属性的对象
+   * @param {Object} obj 来源对象
+   * @param {Array|String} keys 要选中的属性名，单独指定或指定在数组中
+   * @returns {Object}
+   * @example
+   *
+   * var object = { 'a': 1, 'b': '2', 'c': 3 };
+   *
+   * _.pick(object, ['a', 'c']);
+   * // => { 'a': 1, 'c': 3 }
+   */
+  export function pick(obj: object, keys: Array<string> | string): any
+
+  /**
+   *
    * @desc   判断是否为邮箱地址
    * @param  {String}  str
    * @return {Boolean}
