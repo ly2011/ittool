@@ -20,7 +20,9 @@ function formatMoney (amount, options = {}, locales = 'zh-CN') {
     minimumFractionDigits: 2, // 使用的小数位数的最小数目
     maximumFractionDigits: 2 // 使用的小数位数的最大数目
   }
-  options = { ...defaultOptions, ...options }
+  // 无法解析es7的扩展运算符
+  // options = { ...defaultOptions, ...options }
+  options = Object.assign({}, defaultOptions, options)
   if (toLocaleStringSupportsOptions()) {
     // Create our number formatter.
     var formatter = new Intl.NumberFormat(locales, options)
@@ -30,9 +32,5 @@ function formatMoney (amount, options = {}, locales = 'zh-CN') {
     return amount.toLocaleString(locales, options)
   }
 }
-
-// function formatMoney (amount) {
-//   console.log('formatMoney..., ')
-// }
 
 module.exports = formatMoney
