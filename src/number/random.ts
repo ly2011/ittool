@@ -6,7 +6,7 @@
  * @example
  * random(1, 5) // => 返回一个1-5之间的随机数
  */
-function random (min, max) {
+function random(min: number, max: number): number {
   if (min === undefined && max === undefined) {
     return 0
   }
@@ -22,4 +22,5 @@ function random (min, max) {
   return Math.floor(min + Math.random() * (max + 1 - min))
 }
 
-module.exports = random
+// module.exports = random
+export default random

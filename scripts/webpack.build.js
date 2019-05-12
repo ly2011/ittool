@@ -1,8 +1,7 @@
-const webpack = require('webpack')
-const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const path = require('path')
-
+const merge = require('webpack-merge')
 const cwd = process.cwd()
+const baseConfig = require('./webpack.base.js')
 const pkg = require('../package.json')
 const babelConfig = require('../config/babelrc')
 
@@ -11,10 +10,10 @@ const resolve = function (dir) {
   return path.resolve(__dirname, '..', dir)
 }
 
-const config = {
+const config = merge(baseConfig('production'), {
   mode: 'production', // TODO: 为了方便本地调试，暂时改为开发模式
   context: cwd,
-  entry: path.resolve(rootPath, 'src', 'index.js'),
+  entry: path.resolve(rootPath, 'src', 'index.ts'),
   output: {
     filename: `${pkg.name}.min.js`,
     path: path.resolve(rootPath, 'lib'),
@@ -34,14 +33,12 @@ const config = {
       }
     ]
   },
-  plugins: [new ProgressBarPlugin()],
+  plugins: [],
   resolve: {
     alias: {
       '@': path.resolve(rootPath, 'src')
-    },
-    extensions: ['.js'],
-    modules: ['node_modules']
+    }
   }
-}
+})
 
 module.exports = config

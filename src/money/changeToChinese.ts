@@ -1,19 +1,19 @@
 /**
  * @desc 将数字转换为大写金额
- * @param {Number} num 金额
+ * @param {String} num 金额
  * @return {String} 转为大写的金额
  * @example
- * changeToChinese(369.21) // 叁佰陆拾玖元贰角壹分
+ * _.changeToChinese(369.21) // => 叁佰陆拾玖元贰角壹分
  */
-function changeToChinese (num) {
+function changeToChinese(num: string): string {
   // 判断如果传递进来的不是字符的话转换为字符
   if (typeof num === 'number') {
-    num = new String(num)
+    num = num + ''
   }
   num = num.replace(/,/g, '') // 替换tomoney()中的“,”
   num = num.replace(/ /g, '') // 替换tomoney()中的空格
   num = num.replace(/￥/g, '') // 替换掉可能出现的￥字符
-  if (isNaN(num)) {
+  if (isNaN(+num)) {
     // 验证输入的字符是否为数字
     // alert("请检查小写金额是否正确");
     return ''
@@ -23,7 +23,7 @@ function changeToChinese (num) {
   let newchar = ''
   // 小数点前进行转化
   for (let i = part[0].length - 1; i >= 0; i--) {
-    if (part[0].length > 16 || part[0] > Number.MAX_SAFE_INTEGER) {
+    if (part[0].length > 16 || +part[0] > Number.MAX_SAFE_INTEGER) {
       return ''
       // 若数量超过拾亿单位，提示
     }
@@ -66,25 +66,25 @@ function changeToChinese (num) {
         tmpnewchar = tmpnewchar + '元'
         break
       case 1:
-        if (perchar != 0) tmpnewchar = tmpnewchar + '拾'
+        if (perchar !== '0') tmpnewchar = tmpnewchar + '拾'
         break
       case 2:
-        if (perchar != 0) tmpnewchar = tmpnewchar + '佰'
+        if (perchar !== '0') tmpnewchar = tmpnewchar + '佰'
         break
       case 3:
-        if (perchar != 0) tmpnewchar = tmpnewchar + '仟'
+        if (perchar !== '0') tmpnewchar = tmpnewchar + '仟'
         break
       case 4:
         tmpnewchar = tmpnewchar + '万'
         break
       case 5:
-        if (perchar != 0) tmpnewchar = tmpnewchar + '拾'
+        if (perchar !== '0') tmpnewchar = tmpnewchar + '拾'
         break
       case 6:
-        if (perchar != 0) tmpnewchar = tmpnewchar + '佰'
+        if (perchar !== '0') tmpnewchar = tmpnewchar + '佰'
         break
       case 7:
-        if (perchar != 0) tmpnewchar = tmpnewchar + '仟'
+        if (perchar !== '0') tmpnewchar = tmpnewchar + '仟'
         break
       case 8:
         tmpnewchar = tmpnewchar + '亿'
@@ -102,8 +102,8 @@ function changeToChinese (num) {
       part[1] = part[1].substr(0, 2)
     }
     for (let i = 0; i < part[1].length; i++) {
-      tmpnewchar = ''
-      perchar = part[1].charAt(i)
+      let tmpnewchar = ''
+      let perchar = part[1].charAt(i)
       switch (perchar) {
         case '0':
           tmpnewchar = '零' + tmpnewchar
@@ -136,8 +136,8 @@ function changeToChinese (num) {
           tmpnewchar = '玖' + tmpnewchar
           break
       }
-      if (i == 0) tmpnewchar = tmpnewchar + '角'
-      if (i == 1) tmpnewchar = tmpnewchar + '分'
+      if (i === 0) tmpnewchar = tmpnewchar + '角'
+      if (i === 1) tmpnewchar = tmpnewchar + '分'
       newchar = newchar + tmpnewchar
     }
   }
@@ -155,4 +155,5 @@ function changeToChinese (num) {
   return newchar
 }
 
-module.exports = changeToChinese
+// module.exports = changeToChinese
+export default changeToChinese

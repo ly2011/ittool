@@ -18,13 +18,8 @@
  * _.get(object, 'a.b.c', 'default');
  * // => 'default'
  */
-function get (obj, path, defaultValue = undefined) {
-  if (!obj) return defaultValue
-  if (Array.isArray(path)) path = path.join('.')
-  return String.prototype.split
-    .call(path, /[,[\].]+?/)
-    .filter(Boolean)
-    .reduce((a, c) => (Object.hasOwnProperty.call(a, c) ? a[c] : defaultValue), obj)
+interface objProp {
+    [key: string]: string;
 }
-
-module.exports = get
+declare function get(obj: objProp, path: string[] | string, defaultValue?: undefined): any;
+export default get;

@@ -2,9 +2,13 @@
 /**
  * 多个数组取并集 | 数组去重
  * @param  {Array} ...arr 可传入 1 个或多个数组
- * @return {Array}
+ * @returns {Array}
+ * @example
+ * _.union([1, 3, 2, 2, 1]) // => [1, 3, 2]
+ * _.union([1, 'a', 3, 1], [4, 'a', 'b'], [2, 3, 'b', 'c']) // => [1, 'a', 3, 4, 'b', 2, 'c']
+ *
  */
-function union (...arr) {
+function union<T>(...arr: T[]): T[] {
   // 先合并所有数组
   const totalArr = Array.prototype.concat.apply([], arr)
   // 再对数组元素进行去重(无法解析es7的数组解构)
@@ -12,4 +16,5 @@ function union (...arr) {
   return Array.from(new Set(totalArr))
 }
 
-module.exports = union
+// module.exports = union
+export default union

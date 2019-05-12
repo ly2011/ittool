@@ -10,13 +10,16 @@
  * _.omit(object, ['a', 'c']);
  * // => { 'b': '2' }
  */
-function omit (obj, keys) {
+interface objProp {
+  [key: string]: string
+}
+function omit(obj: objProp, keys: string[] | string): objProp {
   if (!obj) return obj
   if (!keys) return obj
   if (!Array.isArray(keys)) {
     keys = [keys]
   }
-  const tmpObj = {}
+  const tmpObj: objProp = {}
   for (const key in obj) {
     if (!keys.includes(key)) {
       tmpObj[key] = JSON.parse(JSON.stringify(obj[key]))
@@ -26,4 +29,5 @@ function omit (obj, keys) {
   return tmpObj
 }
 
-module.exports = omit
+// module.exports = omit
+export default omit

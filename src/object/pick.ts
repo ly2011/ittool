@@ -10,13 +10,16 @@
  * _.pick(object, ['a', 'c']);
  * // => { 'a': 1, 'c': 3 }
  */
-function pick (obj, keys) {
+interface objProp {
+  [key: string]: string
+}
+function pick(obj: objProp, keys: string[] | string) {
   if (!obj) return obj
   if (!keys) return obj
   if (!Array.isArray(keys)) {
     keys = [keys]
   }
-  const tmpObj = {}
+  const tmpObj: objProp = {}
   for (const key in obj) {
     if (keys.includes(key)) {
       tmpObj[key] = JSON.parse(JSON.stringify(obj[key]))
@@ -26,4 +29,5 @@ function pick (obj, keys) {
   return tmpObj
 }
 
-module.exports = pick
+// module.exports = pick
+export default pick
