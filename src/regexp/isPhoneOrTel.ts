@@ -7,7 +7,7 @@ const isPhoneNum = require('./isPhoneNum')
  * @param {String|Number} str
  * @return {Boolean}
  */
-function isPhoneOrTel(str) {
+function isPhoneOrTel(str: string | number): boolean {
   return (typeof str !== 'number' && isTel(str)) || isPhoneNum(str)
 }
 

@@ -5,7 +5,7 @@
  * @param {Date} date2
  * @return {Boolean}
  */
-function isSameDay (date1, date2) {
+function isSameDay(date1: Date, date2: Date): boolean {
   if (!date1 || !date2) {
     return false
   }
@@ -27,4 +27,5 @@ function isSameDay (date1, date2) {
   }
 }
 
-module.exports = isSameDay
+// module.exports = isSameDay
+export default isSameDay

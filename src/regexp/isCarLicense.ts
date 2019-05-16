@@ -3,7 +3,7 @@
  * @param {String} license 车牌号码
  * @return {Boolean}
  */
-function isCarLicense (license) {
+function isCarLicense(license: string): boolean {
   if (!license) return false
   // 普通汽车
   const ordinaryCarReg = /[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]{1}/
@@ -13,4 +13,5 @@ function isCarLicense (license) {
   return ordinaryCarReg.test(license) || newEnergyCarReg.test(license)
 }
 
-module.exports = isCarLicense
+// module.exports = isCarLicense
+export default isCarLicense

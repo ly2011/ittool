@@ -3,8 +3,8 @@
  * @param {String} str
  * @return {Boolean}
  */
-function isTel (str) {
+function isTel(str: string): boolean {
   return /^\d{3,4}-\d{7,8}$/.test(str)
 }
 
-module.exports = isTel
+export default isTel

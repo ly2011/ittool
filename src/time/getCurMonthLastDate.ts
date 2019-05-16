@@ -5,7 +5,7 @@
  * @return {Date}
  * @example getCurMonthLastDate(new Date('2019/01/01')) // new Date('2019/01/31')
  */
-function getCurMonthLastDate (date) {
+function getCurMonthLastDate(date: number | string | Date): Date {
   const newData = new Date(+date)
   newData.setDate(1)
   newData.setMonth(newData.getMonth() + 1)
@@ -17,4 +17,5 @@ function getCurMonthLastDate (date) {
   return newData
 }
 
-module.exports = getCurMonthLastDate
+// module.exports = getCurMonthLastDate
+export default getCurMonthLastDate

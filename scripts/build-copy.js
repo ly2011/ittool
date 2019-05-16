@@ -33,12 +33,12 @@ const rootPath = path.resolve(__dirname, '../')
 // 替换模块文件
 let copying = ora('copying...')
 copying.start()
-rm(path.resolve(rootPath, 'lib', '*.js'), err => {
+rm(path.resolve(rootPath, 'lib', '*.*'), err => {
   if (err) throw err
-  fg([path.resolve(rootPath, 'src/**/*.js'), `!${path.resolve(rootPath, 'src/index.js')}`]).then(async entries => {
+  fg([path.resolve(rootPath, 'src/**/*.ts'), `!${path.resolve(rootPath, 'src/index.ts')}`]).then(async entries => {
     try {
       for (const item of entries) {
-        const fileName = path.basename(item)
+        const fileName = path.basename(item).replace('ts', 'js')
         const result = await rollup(buildRollupOptions(item))
         await result.write({
           file: `lib/${fileName}`,

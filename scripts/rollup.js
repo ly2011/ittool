@@ -3,6 +3,7 @@ const resolve = require('rollup-plugin-node-resolve')
 const commonjs = require('rollup-plugin-commonjs')
 const babel = require('rollup-plugin-babel')
 const replace = require('rollup-plugin-replace')
+const typescript = require('rollup-plugin-typescript')
 
 const { name, version, author } = require('../package.json')
 // banner
@@ -16,7 +17,7 @@ function build (input) {
   const defaultOptions = {
     plugins: [
       alias({
-        resolve: ['.js']
+        resolve: ['.js', '.jsx', '.ts', '.tsx']
       }),
       replace({
         'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
@@ -27,6 +28,7 @@ function build (input) {
         // specifically include/exclude files
         include: 'node_modules/**'
       }),
+      typescript(),
       babel({
         runtimeHelpers: true,
         exclude: 'node_modules/**' // only transpile our source code

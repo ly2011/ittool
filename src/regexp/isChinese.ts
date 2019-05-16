@@ -3,9 +3,9 @@
  * @param {String} str
  * @return {Boolean}
  */
-function isChinese (str) {
+function isChinese(str: string): boolean {
   if (!str) return false
   const reg = /[\u4E00-\u9FA5]/
   return reg.test(str)
 }
-module.exports = isChinese
+export default isChinese

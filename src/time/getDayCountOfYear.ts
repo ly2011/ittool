@@ -5,7 +5,7 @@ const isLeapYear = require('./isLeapYear')
  * @param {Number} year 年份
  * @return {Number} 闰年返回366,平年返回365
  */
-function getDayCountOfYear (year) {
+function getDayCountOfYear(year: number): number {
   return isLeapYear(year) ? 366 : 365
 }
 

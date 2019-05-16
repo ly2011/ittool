@@ -4,8 +4,8 @@
  * @param  {String|Number} str
  * @return {Boolean}
  */
-function isPhoneNum(str) {
+function isPhoneNum(str: string): boolean {
   return /^(\+?0?86\-?)?1[3456789]\d{9}$/.test(str)
 }
 
-module.exports = isPhoneNum
+export default isPhoneNum

@@ -4,7 +4,8 @@
  * @param  {String|Number} str 身份证号码
  * @return {Boolean}
  */
-function isIdCard (str) {
+function isIdCard(str: string | number): boolean {
+  str = str + ''
   // 第二代身份证号码正则
   const secondIdNumberReg = /^[1-9]\d{5}(18|19|20)\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/
   // 第一代身份证正则表达式(15位)
@@ -12,4 +13,4 @@ function isIdCard (str) {
   return secondIdNumberReg.test(str) || firstIdNumberReg.test(str)
 }
 
-module.exports = isIdCard
+export default isIdCard
