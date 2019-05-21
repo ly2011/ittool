@@ -381,3 +381,16 @@ _.getDayCountOfYear(2019) // => 365
 ```js
 _.random(1, 5) // => 返回一个1-5之间的随机数
 ```
+
+### toPrecision
+
+精确数值的方法
+
+**Arguments**
+
+`num(Number)`: 数值
+`precision(Number)`: 小数点后数字的个数
+
+```js
+_.toPrecision(1.3333335, 6) // => 1.333334
+```
